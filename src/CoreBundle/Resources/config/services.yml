@@ -1,4 +1,10 @@
 services:
-#    core.example:
-#        class: CoreBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    googleapis.maps.js:
+        class: CoreBundle\GoogleApis\Js\PlacesApi
+        arguments: [%googleapis.maps.key%]
+
+    core.twig_extension:
+        class: CoreBundle\Twig\CoreExtension
+        arguments: [@googleapis.maps.js]
+        tags:
+            - { name: twig.extension}
