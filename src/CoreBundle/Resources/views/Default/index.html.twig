@@ -1,1 +1,21 @@
-Hello World!
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'vtc'|upper }}{% endblock %}
+
+{% block body %}
+    <div id="container">
+        <div id="content"></div>
+        <div id="map"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ googleapis_js_places }}"></script>
+    <script>
+        var map = new google.maps.Map(document.querySelector('#map'), {
+            center: {lat: 49.736, lng: 2.908},
+            zoom: 7
+        });
+    </script>
+{% endblock %}
