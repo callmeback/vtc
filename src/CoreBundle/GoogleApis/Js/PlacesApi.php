@@ -13,6 +13,8 @@ class PlacesApi
 
     public function generateScriptSrc()
     {
-        return 'https://maps.googleapis.com/maps/api/js?key=' . $this->key . '&signed_in=true&libraries=places';
+        if ($this->key) {
+            return 'https://maps.googleapis.com/maps/api/js?key=' . $this->key . '&signed_in=true&libraries=places';
+        }
     }
 }

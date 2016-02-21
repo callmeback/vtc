@@ -1,7 +1,7 @@
 services:
     googleapis.maps.js:
         class: CoreBundle\GoogleApis\Js\PlacesApi
-        arguments: [%googleapis.maps.key%]
+        arguments: ["@=container.hasParameter('googleapis.maps.key') ? parameter('googleapis.maps.key') : null"]
 
     core.twig_extension:
         class: CoreBundle\Twig\CoreExtension

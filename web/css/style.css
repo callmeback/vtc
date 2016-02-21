@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
     font-family: arial;
+    font-weight: 900;
+    color: rgb(80,80,80);
 }
 
 html, body {
@@ -24,8 +26,109 @@ header {
     position: relative;
 }
 
-#content, #map {
+#map {
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+#content {
+    position: absolute;
+}
+
+#form {
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    width: 900px;
+    min-height: 450px;
+    top: 80px;
+    left: 80px;
+    padding: 40px;
+}
+
+.input-text {
+    width: 400px;
+}
+
+.input-text > label {
+    display: block;
+    padding: 4px;
+    border: 1px solid black;
+    border-bottom: none;
+    font-size: 0.8em;
+}
+
+.input-text > div {
+    position: relative;
+}
+
+.input-text > div > span {
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    width: 30px;
+    height: 97%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 17px;
+}
+
+.input-text > div > input {
+    width: 100%;
+    padding: 11px;
+    padding-left: 0;
+    border: 1px solid black;
+    text-indent: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    box-shadow: inset 0 0px 0 rgba(0,0,0,0.6),inset 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.input-text > div > input:focus {
+    -webkit-box-shadow: 0 0 0 .13333333333333333em #696661;
+    box-shadow: 0 0 0 2px #696661;
+    border-radius: 3px;
+    border-color: #696661;
+}
+
+.fa-map-position {
+    background: url('../img/location76.svg');
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.top-left {
+    border-top-left-radius: 6px;
+}
+
+.top-right {
+    border-top-right-radius: 6px;
+}
+
+@media (max-width: 1000px) {
+    #content {
+        width: 100%;
+    }
+    
+    #form {
+        position: static;
+        width: 100%;
+    }
+
+    .input-text {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    #form {
+        padding: 5px;
+    }
 }

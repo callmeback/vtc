@@ -4,8 +4,55 @@
 
 {% block body %}
     <div id="container">
-        <div id="content"></div>
         <div id="map"></div>
+        <div id="content">
+            <div id="form">
+                <div>
+                    <div class="input-text left" style="margin-bottom: 5px;">
+                        <label class="top-left">Départ</label>
+                        <div>
+                            <span class="fa-map-position"></span>
+                            <input type="text" placeholder="Ville, aéroport ou gare">
+                        </div>
+                    </div>
+                    <div class="input-text" style="margin-left: auto;">
+                        <label class="top-right">Arrivée</label>
+                        <div>
+                            <span class="fa-map-position"></span>
+                            <input type="text" placeholder="Ville, aéroport ou gare">
+                        </div>
+                    </div>
+                </div>
+                <a class="fav-plus" style="
+    clear: both;
+    /* background-color: red; */
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+    background: url('/vtc/web/img/add133.svg');
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    text-indent: 12px;
+    margin-bottom: 15px;
+">Ajouter une étape</a>
+                <div class="input-text left">
+                    <label>Date</label>
+                    <div>
+                        <span class="fa-map-position"></span>
+                        <input class="datepicker" type="text" placeholder="Ville, aéroport ou gare">
+                    </div>
+                </div>
+                <div class="input-text right">
+                    <label>Heure</label>
+                    <div>
+                        <span class="fa-map-position"></span>
+                        <input type="time" placeholder="Ville, aéroport ou gare">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
@@ -15,7 +62,8 @@
     <script>
         var map = new google.maps.Map(document.querySelector('#map'), {
             center: {lat: 49.736, lng: 2.908},
-            zoom: 7
+            zoom: 7,
+            styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#094ca3"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"},{"weight":"1"},{"gamma":"1"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape.natural.landcover","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural.terrain","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"saturation":"-100"},{"lightness":"50"},{"hue":"#ff0000"}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":"45"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"on"},{"saturation":"100"},{"gamma":"0.74"},{"lightness":"-41"},{"weight":"1.11"},{"hue":"#ffd100"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"transit.line","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"transit.station","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"visibility":"on"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#094ca3"},{"visibility":"on"},{"saturation":"-50"},{"lightness":"0"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"saturation":"0"},{"lightness":"1"}]}]
         });
     </script>
 {% endblock %}
